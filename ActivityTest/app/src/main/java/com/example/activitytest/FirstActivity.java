@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.concurrent.BlockingDeque;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
     private static final String TAG = "FirstActivity";
 
     /**
@@ -75,8 +75,21 @@ public class FirstActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG, "onRestart: ");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: ");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "Task id is: " + getTaskId());
         setContentView(R.layout.first_layout);
         /**
          * 按钮1事件处理
@@ -90,14 +103,14 @@ public class FirstActivity extends AppCompatActivity {
                 String data = "我来自FirstActivity";
                 //给下个活动传值
                 intent.putExtra("myData", data);
-                //startActivity(intent);
+                startActivity(intent);
                 //用准备接受下个活动传参的方式启动下个活动
-                startActivityForResult(intent, 5300);
+//                startActivityForResult(intent, 5300);
 
-                Log.d(TAG, "onClick: 111"+ FirstActivity.this);
-                Log.d(TAG, "onClick: 22"+ this);
-                Log.d(TAG, "onClick: 33"+ this.getClass());
-                Log.d(TAG, "onClick: 44"+ FirstActivity.this.getClass());
+//                Log.d(TAG, "onClick: 111"+ FirstActivity.this);
+//                Log.d(TAG, "onClick: 22"+ this);
+//                Log.d(TAG, "onClick: 33"+ this.getClass());
+//                Log.d(TAG, "onClick: 44"+ FirstActivity.this.getClass());
             }
         });
 
@@ -132,5 +145,20 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        /**
+         * 启动自己的按钮事件
+         */
+        Button buttonSelf = (Button) findViewById(R.id.button_start_self);
+        buttonSelf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, FirstActivity.class);
+                startActivity(intent);
+            }
+        });
+        
+        
+        
     }
 }

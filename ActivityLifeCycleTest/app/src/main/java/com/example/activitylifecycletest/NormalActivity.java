@@ -45,4 +45,9 @@ public class NormalActivity extends AppCompatActivity {
         outState.putString("tempData", "我是被保存的临时数据");
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG, "onDestroy: 我是NormalActivity的Destroy");
+    }
 }

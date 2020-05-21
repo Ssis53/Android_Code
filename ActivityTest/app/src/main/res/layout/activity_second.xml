@@ -7,6 +7,12 @@
         android:id="@+id/button_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="小巴腾2" />
+        android:text="返回" />
+
+    <Button
+        android:id="@+id/secon_to_third"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="跳转活动3" />
 
 </LinearLayout>
