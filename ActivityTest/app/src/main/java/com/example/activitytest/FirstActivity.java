@@ -99,11 +99,11 @@ public class FirstActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 //注意跟js一样事件处理函数中的上下文，this不是FirstActivity.this。
-                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
                 String data = "我来自FirstActivity";
-                //给下个活动传值
-                intent.putExtra("myData", data);
-                startActivity(intent);
+//                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+//                intent.putExtra("myData", data);
+//                startActivity(intent);
+                SecondActivity.startSecondActivity(FirstActivity.this, data);
                 //用准备接受下个活动传参的方式启动下个活动
 //                startActivityForResult(intent, 5300);
 

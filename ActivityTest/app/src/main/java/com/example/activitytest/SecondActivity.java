@@ -2,6 +2,7 @@ package com.example.activitytest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,11 @@ import android.widget.Toast;
 
 public class SecondActivity extends BaseActivity {
     private static final String TAG = "SecondActivity";
+    public static void startSecondActivity(Context context, String param) {
+        Intent intent = new Intent(context, SecondActivity.class);
+        intent.putExtra("myData", param);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
