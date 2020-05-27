@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--  gravity设置容器中文字格式，textSize是字号单位为sp，textColor字体颜色  -->
+    <TextView
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="#00ff00"
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is TextView"/>
+
+    <!--  match_parent为填满整个父容器，wrap_content为刚好包裹内容，textAllCaps设为false，因为
+      按钮控件自动对文本字母全大写了-->
+    <Button
+        android:id="@+id/my_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/ur_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="你的把疼"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/open_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="弹出Alert"
+        android:textAllCaps="false"/>
+
+    <!--  maxLength限制用户可输入长度，hint相当于placeholder，指定lines避免换行  -->
+    <EditText
+        android:id="@+id/edit_text"
+        android:layout_width="match_parent"
+        android:maxLength="10"
+        android:layout_height="wrap_content"
+        android:hint="请输入账号"
+        android:lines="1"
+        android:ellipsize="end"/>
+
+    <ImageView
+        android:id="@+id/img_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/one"/>
+    
+    <ProgressBar
+        android:id="@+id/loading_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:max="100"/>
+</LinearLayout>
